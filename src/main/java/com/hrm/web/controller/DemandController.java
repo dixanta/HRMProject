@@ -6,6 +6,7 @@
 package com.hrm.web.controller;
 
 import com.hrm.web.entity.Demand;
+import com.hrm.web.repository.CompanyRepository;
 import com.hrm.web.repository.DemandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class DemandController {
     @Autowired
     private DemandRepository demandRepository;
+    @Autowired
+    private CompanyRepository companyRepository;
     
     @RequestMapping(method = RequestMethod.GET)
     public String index(Model model){
@@ -34,13 +37,15 @@ public class DemandController {
     }
     
     @RequestMapping(value="/add",method = RequestMethod.GET)
-    public String add(){
+    public String add(Model model){
+        model.addAttribute("companies", companyRepository.findAll());
         return "demands/add";
     }
     
     @RequestMapping(value="/edit/{id}",method = RequestMethod.GET)
     public String edit(@PathVariable("id")Long id,Model model){
         model.addAttribute("demand",demandRepository.findById(id).get());
+        model.addAttribute("companies", companyRepository.findAll());
         return "demands/edit";
     }
     

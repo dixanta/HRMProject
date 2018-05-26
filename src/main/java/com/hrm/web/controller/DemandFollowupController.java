@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -35,11 +36,11 @@ public class DemandFollowupController {
     
     
     @RequestMapping(value="/save",method = RequestMethod.POST)
-    public String save(@ModelAttribute("DemandFollowup")DemandFollowup demand){
+    public @ResponseBody String save(@ModelAttribute("DemandFollowup")DemandFollowup demand){
         
         followupRepository.save(demand);
         System.out.println(demand);
-        return "redirect:/demands";
+        return "success";
     }
     
 }

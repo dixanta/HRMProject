@@ -22,7 +22,7 @@
 
     </tr>
     <c:forEach var="demand" items="${demands}">
-        <tr>
+        <tr class="row-${demand.id}">
             <td>${demand.id}</td>
             <td>${demand.title}</td>
             <td>${demand.openings}</td>
@@ -33,6 +33,9 @@
             <td>${demand.status}</td>
             <td>
                 
+                <a href="javascript:void(0)" class="total-followups">
+                    ${demand.totalFollowups()}
+                </a>
                 <a href="javascript:void(0)" data-title="${demand.title}" data-id="${demand.id}" class="add-follow-btn btn btn-default">
                     <span class="glyphicon glyphicon-plus"></span>
                 </a>
@@ -56,7 +59,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title"></h4>
             </div>
-            <form>
+            <form id="followup-form">
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Message</label>
@@ -70,7 +73,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="save-followup-btn btn btn-primary">Save</button>
+                    <button type="button" class="save-follow-btn btn btn-primary">Save</button>
                 </div>
             </form>
         </div><!-- /.modal-content -->
@@ -84,8 +87,26 @@ $(document).ready(function(){
        $dialog
                .find('.modal-title')
                .html('Add Followup for '+$this.attr('data-title') );
-       $("#follow-demand-id").val($this.val());
+       $("#follow-demand-id").val($this.attr('data-id'));
         $dialog.modal();
+   });
+   
+   $(".save-follow-btn").on('click',function(){
+       
+      $.post("${SITE_URL}/demands/followups/save",
+              $("#followup-form").serialize(),function(res){
+                  if(res==="success"){
+                      $id=$("#follow-demand-id").val();
+                      $counter=$(".row-"+$id).find('.total-followups');
+                      $value=parseInt($counter.text());
+                      
+                      $counter.text(($value+1));
+                      document.forms["followup-form"].reset();
+                      $("#demand-followup-dialog").modal('hide');
+                      
+                        
+                  }
+       }); 
    });
 });
 </script>
