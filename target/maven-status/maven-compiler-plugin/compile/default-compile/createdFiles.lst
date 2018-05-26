@@ -12,9 +12,12 @@ com\hrm\web\repository\DemandRepository.class
 com\hrm\web\controller\HomeController.class
 com\hrm\web\repository\DemandFollowupRepository.class
 com\hrm\web\controller\CompanyController.class
+com\hrm\web\entity\EmailTemplate.class
 com\hrm\web\entity\DemandFollowup.class
+com\hrm\web\controller\EmailTemplateController.class
 com\hrm\web\controller\PersonnelController.class
 com\hrm\web\entity\Personnel.class
 com\hrm\web\repository\PersonnelRepository.class
 com\hrm\web\repository\CompanyRepository.class
+com\hrm\web\repository\EmailTemplateRepository.class
 com\hrm\web\controller\EducationController.class

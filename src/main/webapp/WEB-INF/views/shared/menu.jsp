@@ -20,9 +20,9 @@
           <ul class="dropdown-menu">
             <li><a href="${SITE_URL}/skills">Skills</a></li>
             <li><a href="${SITE_URL}/educations">Educations</a></li>
-            <li><a href="#">Something else here</a></li>
+            
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="${SITE_URL}/emailtemplates">Email Templates</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>
           </ul>

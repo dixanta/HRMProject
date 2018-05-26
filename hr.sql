@@ -1,16 +1,25 @@
--- MySQL dump 10.16  Distrib 10.1.28-MariaDB, for Win32 (AMD64)
---
--- Host: localhost    Database: hr
--- ------------------------------------------------------
--- Server version	10.1.28-MariaDB
+create table companies(id serial primary key,name varchar(50),email varchar(100),logo varchar(255),
+contact_person varchar(100),phone_no varchar(20),mobile_no varchar(20),
+address varchar(255),lat varchar(20),lng varchar(20),created_at timestamp
+default current_timestamp,updated_at timestamp null,status boolean);
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+create table demands(id serial primary key,
+title varchar(255),description text,company_id int,
+openings int,deadline date,salary int,created_at timestamp
+default current_timestamp,updated_at timestamp null,status boolean);
+
+create table demand_followups(id serial primary key,
+message text,demand_id int, next_followup_date date,
+created_at timestamp
+default current_timestamp,updated_at timestamp null);
+
+create table mst_skills(id serial primary key,
+skill_name varchar(50));
+
+
+create table mst_educations(id serial primary key,
+education_name varchar(100));
+
+create table mst_email_templates(id serial primary key,
+title varchar(255),slug varchar(255),description text,created_at timestamp
+default current_timestamp,updated_at timestamp null,status boolean);
