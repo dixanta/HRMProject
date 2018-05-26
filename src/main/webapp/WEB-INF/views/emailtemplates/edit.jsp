@@ -1,6 +1,6 @@
 <%@include file="../shared/header.jsp" %>
 <div class="page-header">
-    <h1>Edit Skill</h1>
+    <h1>Edit Email Template</h1>
 </div>
 <form method="post" action="${SITE_URL}/emailtemplates/save">
     <div class="form-group">

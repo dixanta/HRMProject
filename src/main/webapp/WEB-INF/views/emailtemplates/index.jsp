@@ -1,6 +1,6 @@
 <%@include file="../shared/header.jsp" %>
 <div class="page-header">
-        <h1>Skills!</h1>
+        <h1>Email Templates!</h1>
 </div>        
         <div class="pull-right">
             <p>
