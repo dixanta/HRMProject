@@ -3,6 +3,14 @@ contact_person varchar(100),phone_no varchar(20),mobile_no varchar(20),
 address varchar(255),lat varchar(20),lng varchar(20),created_at timestamp
 default current_timestamp,updated_at timestamp null,status boolean);
 
+create table personnels(id serial primary key,
+salute enum('Mr','Mrs','Miss','Mrs'),
+first_name varchar(50),last_name varchar(50),
+email varchar(100),contact_no varchar(20),
+address varchar(255),created_at timestamp
+default current_timestamp,updated_at timestamp null,status boolean);
+
+
 create table demands(id serial primary key,
 title varchar(255),description text,company_id int,
 openings int,deadline date,salary int,created_at timestamp
@@ -26,3 +34,7 @@ default current_timestamp,updated_at timestamp null,status boolean);
 
 create table settings(id serial primary key,name varchar(100) unique,
 value text);
+
+create table mst_socials(id serial primary key, name varchar(100)
+unique,created_at timestamp
+default current_timestamp,updated_at timestamp null,status boolean);

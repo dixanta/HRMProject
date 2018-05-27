@@ -25,26 +25,14 @@ import javax.persistence.TemporalType;
  * @author USER
  */
 @Entity
-@Table(name = "demands")
-public class Demand implements Serializable {
+@Table(name = "mst_socials")
+public class Social implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-    @Column(name = "title")
-    private String title;
-    @Column(name ="description")
-    private String description;
-    @ManyToOne
-    @JoinColumn(name ="company_id")
-    private Company company;
-    @Column(name = "openings")
-    private int openings;
-    @Column(name = "deadline")
-    @Temporal(TemporalType.DATE)
-    private Date deadline;
-    @Column(name = "salary")
-    private int salary;
+    @Column(name = "name")
+    private String name;
     @Column(name = "created_at",insertable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
@@ -54,13 +42,11 @@ public class Demand implements Serializable {
     @Column(name = "status")
     private boolean status;
     
-    @OneToMany(mappedBy = "demand")
-    private List<DemandFollowup> followupList;
-
-    public Demand() {
+    
+    public Social() {
     }
     
-    public Demand(long id){
+    public Social(long id){
         this.id=id;
     }
 
@@ -72,54 +58,14 @@ public class Demand implements Serializable {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Company getCompany() {
-        return company;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
-    public int getOpenings() {
-        return openings;
-    }
-
-    public void setOpenings(int openings) {
-        this.openings = openings;
-    }
-
-    public Date getDeadline() {
-        return deadline;
-    }
-
-    public void setDeadline(Date deadline) {
-        this.deadline = deadline;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
+    
     public Date getCreatedDate() {
         return createdDate;
     }
@@ -144,11 +90,4 @@ public class Demand implements Serializable {
         this.status = status;
     }
 
-    public List<DemandFollowup> getFollowupList() {
-        return followupList;
-    }
-    
-    public int totalFollowups(){
-        return followupList.size();
-    }
 }
