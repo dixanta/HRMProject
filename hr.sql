@@ -23,3 +23,6 @@ education_name varchar(100));
 create table mst_email_templates(id serial primary key,
 title varchar(255),slug varchar(255),description text,created_at timestamp
 default current_timestamp,updated_at timestamp null,status boolean);
+
+create table settings(id serial primary key,name varchar(100) unique,
+value text);
