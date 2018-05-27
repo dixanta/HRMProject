@@ -34,6 +34,8 @@ public class Company {
     private String contactPerson;
     @Column(name = "email")
     private String email;
+    @Column(name = "url")
+    private String url;
     @Column(name = "phone_no")
     private String phoneNo;
     @Column(name = "mobile_no")
@@ -89,6 +91,14 @@ public class Company {
         this.email = email;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+    
     public String getContactPerson() {
         return contactPerson;
     }

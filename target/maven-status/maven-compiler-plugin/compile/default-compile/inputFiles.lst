@@ -16,6 +16,7 @@ D:\javaapps\HRMProject\src\main\java\com\hrm\web\AppInitializer.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\Company.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\repository\CompanyRepository.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\repository\SkillRepository.java
+D:\javaapps\HRMProject\src\main\java\com\hrm\web\repository\SocialRepository.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\controller\DemandController.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\Personnel.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\controller\SkillController.java
@@ -26,3 +27,5 @@ D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\Demand.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\repository\DemandFollowupRepository.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\repository\PersonnelRepository.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\controller\EducationController.java
+D:\javaapps\HRMProject\src\main\java\com\hrm\web\controller\SocialController.java
+D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\Social.java
