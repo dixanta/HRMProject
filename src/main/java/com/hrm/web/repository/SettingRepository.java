@@ -19,6 +19,6 @@ import org.springframework.stereotype.Repository;
 public interface SettingRepository 
                 extends JpaRepository<Setting, Long> {
     
-    @Query(value = "select * from settings where name=:name",nativeQuery = true)
-    Setting getByName(@Param("name") String name);
+    @Query(value = "select value from settings where name=:name",nativeQuery = true)
+    String getByName(@Param("name") String name);
 }

@@ -7,6 +7,7 @@ package com.hrm.web.controller;
 
 import com.hrm.web.entity.Company;
 import com.hrm.web.repository.CompanyRepository;
+import com.hrm.web.util.Mailer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -25,6 +28,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class CompanyController {
     @Autowired
     private CompanyRepository companyRepository;
+    
+    @Autowired
+    private Mailer mailer;
     
     @RequestMapping(method = RequestMethod.GET)
     public String index(Model model){
@@ -52,6 +58,19 @@ public class CompanyController {
         companyRepository.save(company);
         System.out.println(company);
         return "redirect:/companies";
+    }
+    
+    @RequestMapping(value = "mail",method = RequestMethod.POST)
+    @ResponseBody
+    public String mail(@RequestParam("email")String email,
+            @RequestParam("subject")String subject,
+            @RequestParam("message")String message){
+        mailer.setTo(email);
+        mailer.setSubject(subject);
+        mailer.setBody(message);
+        System.out.println(mailer);
+        mailer.send();
+        return "mail sent";
     }
     
 }

@@ -2,12 +2,14 @@ D:\javaapps\HRMProject\src\main\java\com\hrm\web\repository\EmailTemplateReposit
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\controller\DemandFollowupController.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\controller\HomeController.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\repository\EducationRepository.java
+D:\javaapps\HRMProject\src\main\java\com\hrm\web\AppConfigurer.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\controller\EmailTemplateController.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\Education.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\DemandFollowup.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\controller\SettingController.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\Skill.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\EmailTemplate.java
+D:\javaapps\HRMProject\src\main\java\com\hrm\web\util\Mailer.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\repository\DemandRepository.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\Setting.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\AppInitializer.java
