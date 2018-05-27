@@ -23,10 +23,12 @@
             
             <li role="separator" class="divider"></li>
             <li><a href="${SITE_URL}/emailtemplates">Email Templates</a></li>
+            <li><a href="${SITE_URL}/socials">Social Medias</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>
           </ul>
         </li>
+        <li><a href="${SITE_URL}/personnels">Personnels</a></li>
         <li><a href="${SITE_URL}/companies">Companies</a></li>
         <li><a href="${SITE_URL}/demands">Demands</a></li>
       </ul>
