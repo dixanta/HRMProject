@@ -11,6 +11,7 @@ D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\Skill.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\EmailTemplate.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\util\Mailer.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\repository\DemandRepository.java
+D:\javaapps\HRMProject\src\main\java\com\hrm\web\controller\MediaController.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\Setting.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\AppInitializer.java
 D:\javaapps\HRMProject\src\main\java\com\hrm\web\entity\Company.java

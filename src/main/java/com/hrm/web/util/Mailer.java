@@ -127,7 +127,7 @@ public class Mailer {
             message.setSubject(subject);
 
             // Now set the actual message
-            message.setText(body);
+            message.setContent(body,"text/html");
 
             // Send message
             Transport.send(message);

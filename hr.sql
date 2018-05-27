@@ -38,3 +38,5 @@ value text);
 create table mst_socials(id serial primary key, name varchar(100)
 unique,created_at timestamp
 default current_timestamp,updated_at timestamp null,status boolean);
+
+
